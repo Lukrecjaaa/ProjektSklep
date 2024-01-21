@@ -1,0 +1,16 @@
+﻿@model List<Product>
+
+@{
+    ViewBag.Title = "Produkty";
+    Layout = "_Layout";
+}
+
+<h1>Lista produktów</h1>
+
+@foreach (var product in Model)
+{
+    <div>
+        <p>@product.Id; @product.Name; @product.Price zł</p>
+        <a asp-controller="Cart" asp-action="Add" asp-route-id="@product.Id">Dodaj do koszyka</a>
+    </div>
+}

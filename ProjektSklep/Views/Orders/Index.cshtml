@@ -1,0 +1,19 @@
+@model Orders
+
+@{
+    ViewBag.Title = "Zamówienia";
+    Layout = "_Layout";
+}
+
+<h2>Zamówienia użytkownika @Model.UserId</h2>
+@foreach (var cart in @Model.Carts)
+{
+    <p>Zamówienie nr. @cart.Id</p>
+    if (@cart.Products != null)
+    {
+        foreach (var product in @cart.Products)
+        {
+            <p>@product.Id; @product.Name; @product.Price zł; @product.Count</p>
+        }
+    }
+}

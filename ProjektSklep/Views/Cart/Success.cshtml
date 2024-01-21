@@ -1,0 +1,16 @@
+@model Cart
+
+@{
+    ViewBag.Title = "Zamówienie";
+    Layout = "_Layout";
+}
+
+<h2>Zamówienie zostało przyjęte</h2>
+<p>Zamówione zostały produkty:</p>
+@if (@Model.Products != null)
+{
+    foreach (var product in @Model.Products)
+    {
+        <p>@product.Id; @product.Name; @product.Price zł; @product.Count</p>
+    }
+}
