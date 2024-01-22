@@ -25,56 +25,50 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var p1 = new Product
+        TryAddProduct(new Product
         {
             Id = 1,
             Name = "Garnek",
+            ImageUrl = "https://images-ext-2.discordapp.net/external/B5jdR-7M_S8DWO1NV0AdTv1NtEA1SyOmmHCuzpogL-8/https/gerlach.pl/img/cms/garnek-prime-white-24-cm.jpg?format=webp&width=671&height=671",
             Price = 55.99,
             Count = 1
-        };
-        var p2 = new Product
+        });
+        
+        TryAddProduct(new Product
         {
             Id = 2,
-            Name = "BBB",
-            Price = 2.34,
+            Name = "Miska",
+            ImageUrl = "https://florina.pl/hpeciai/0dbd903db9c01828868e01f4d8a6d31d/pol_pl_Miska-kuchenna-plastikowa-Praktyczna-mietowa-3-l-2800_2.webp",
+            Price = 12.99,
             Count = 1
-        };
-        var p3 = new Product
+        });
+        
+        TryAddProduct(new Product
         {
             Id = 3,
-            Name = "CCC",
-            Price = 3.45,
+            Name = "Patelnia",
+            ImageUrl = "https://domex.leszno.pl/2-large_default/patelnia-classic-28-cm-non-stick-nieprzywierajaca-toscania.jpg",
+            Price = 99.99,
             Count = 1
-        };
+        });
         
-        var p4 = new Product
+        TryAddProduct(new Product
         {
             Id = 4,
-            Name = "AAA",
-            Price = 1.23,
+            Name = "Zestaw sztućców (30 elementów)",
+            ImageUrl = "https://www.villaitalia.pl/media/products/2f221d2d0d2240db51561fc19a2ff7b8/images/thumbnail/large_Antique-Zestaw.webp?lm=1686838401",
+            Price = 149.99,
             Count = 1
-        };
-        var p5 = new Product
+        });
+        
+        TryAddProduct(new Product
         {
             Id = 5,
-            Name = "BBB",
-            Price = 2.34,
+            Name = "Zestaw szklanek (5 elementów)",
+            ImageUrl = "https://www.villaitalia.pl/media/products/401b9894265feac99746cb7b0d9a4099/images/thumbnail/large_komplet-szklanek-do-drinkow-AK409-K.webp?lm=1686905721",
+            Price = 45.99,
             Count = 1
-        };
-        var p6 = new Product
-        {
-            Id = 6,
-            Name = "CCC",
-            Price = 3.45,
-            Count = 1
-        };
-        
-        TryAddProduct(p1);
-        TryAddProduct(p2);
-        TryAddProduct(p3);
-        TryAddProduct(p4);
-        TryAddProduct(p5);
-        TryAddProduct(p6);
+        });
         
         return View(_context.Products.ToList());
     }

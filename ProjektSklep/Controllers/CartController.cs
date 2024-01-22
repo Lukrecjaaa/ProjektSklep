@@ -130,6 +130,21 @@ public class CartController : Controller
             };
             _context.Carts.Add(cart);
         }
+        
+        var products = new List<Product>();
+            
+        foreach (var id in cart.ProductIds)
+        {
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            products.Add(product);
+        }
+
+        cart.Products = products;
+        
+        foreach (var product in cart.Products)
+        {
+            product.Count = 0;
+        }
 
         cart.IsOrdered = true;
         // cart.Products = cart.Products.Distinct().ToList();

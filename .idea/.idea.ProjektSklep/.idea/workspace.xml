@@ -5,18 +5,20 @@
     <projectFile profileName="http">ProjektSklep/ProjektSklep.csproj</projectFile>
     <projectFile profileName="https">ProjektSklep/ProjektSklep.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a2d592-fa0b-4bb9-bfe5-1feca0dc57cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjektSklep/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjektSklep/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjektSklep/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjektSklep/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjektSklep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjektSklep/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjektSklep/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Controllers/CartController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektSklep/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjektSklep/Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjektSklep/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Models/Product.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektSklep/Views/Cart/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Views/Cart/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektSklep/Views/Cart/Success.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Views/Cart/Success.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektSklep/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektSklep/Views/Orders/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Views/Orders/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjektSklep/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjektSklep/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/Views/Shared/_Layout.cshtml.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektSklep/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektSklep/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektSklep/wwwroot/css/site.css" afterDir="false" />
     </list>
@@ -28,35 +30,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2bKGS2avIEli7Fm6gsAx8Emm6Or" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.ProjektSklep: http.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.ProjektSklep: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\lusia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\lusia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\lusia\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\lusia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\lusia\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\lusia\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ProjektSklep: http">
     <configuration name="ProjektSklep: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ProjektSklep/ProjektSklep.csproj" />

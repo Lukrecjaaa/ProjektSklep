@@ -7,24 +7,23 @@
 
 @if (Model.Count > 0)
 {
-    <h2>Zamówienia użytkownika @Model[0].UserId</h2>
-    <table class="table">
+    <h2>Twoje zamówienia</h2>
+    <table class="table align-middle">
         @foreach (var cart in @Model)
         {
             <tr>
-                <th colspan="4">Zamówienie nr. @cart.Id</th>
+                <th colspan="3">Zamówienie nr. @cart.Id</th>
             </tr>
             @foreach (var product in @cart.Products)
             {
                 <tr>
-                    <td>@product.Id</td>
+                    <td><img src="@product.ImageUrl"/></td>
                     <td>@product.Name</td>
                     <td>@product.Price zł</td>
-                    <td>@product.Count szt</td>
                 </tr>
             }
             <tr class="table-info">
-                <td colspan="4">Suma: @cart.Sum zł</td>
+                <td colspan="3">Suma: @cart.Sum zł</td>
             </tr>
             <tr style="height: 20px"></tr>
         }

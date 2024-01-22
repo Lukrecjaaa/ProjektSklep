@@ -9,12 +9,11 @@
 <h4>Zamówione zostały produkty:</h4>
 @if (@Model.Products != null)
 {
-    <table class="table">
+    <table class="table align-middle">
         <tr>
             <th>ID produktu</th>
             <th>Nazwa</th>
             <th>Cena</th>
-            <th>Ilość</th>
         </tr>
         @foreach (var product in @Model.Products)
         {
@@ -22,11 +21,10 @@
                 <td>@product.Id</td>
                 <td>@product.Name</td>
                 <td>@product.Price zł</td>
-                <td>@product.Count szt</td>
             </tr>
         }
         <tr class="table-info">
-            <td colspan="4">Suma: @Model.Sum zł</td>
+            <td colspan="3">Suma: @Model.Sum zł</td>
         </tr>
 
     </table>
