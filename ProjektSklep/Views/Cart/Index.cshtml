@@ -5,7 +5,7 @@
     Layout = "_Layout";
 }
 
-<h2>Koszyk użytkownika @Model.UserId</h2>
+<h2>Koszyk użytkownika @Model.UserId o ID @Model.Id</h2>
 @if (@Model.Products != null)
 {
     foreach (var product in @Model.Products)

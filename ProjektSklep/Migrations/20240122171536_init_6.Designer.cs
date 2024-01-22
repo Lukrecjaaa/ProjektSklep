@@ -2,17 +2,20 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjektSklep.Data;
 
 #nullable disable
 
-namespace ProjektSklep.Data.Migrations
+namespace ProjektSklep.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240122171536_init_6")]
+    partial class init_6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.1");
@@ -222,19 +225,31 @@ namespace ProjektSklep.Data.Migrations
                     b.Property<bool>("IsOrdered")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ProductIds")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("Sum")
-                        .HasColumnType("REAL");
+                    b.Property<int?>("OrdersId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("UserId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OrdersId");
+
                     b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("ProjektSklep.Models.Orders", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("ProjektSklep.Models.Product", b =>
@@ -313,6 +328,13 @@ namespace ProjektSklep.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ProjektSklep.Models.Cart", b =>
+                {
+                    b.HasOne("ProjektSklep.Models.Orders", null)
+                        .WithMany("Carts")
+                        .HasForeignKey("OrdersId");
+                });
+
             modelBuilder.Entity("ProjektSklep.Models.Product", b =>
                 {
                     b.HasOne("ProjektSklep.Models.Cart", null)
@@ -323,6 +345,11 @@ namespace ProjektSklep.Data.Migrations
             modelBuilder.Entity("ProjektSklep.Models.Cart", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("ProjektSklep.Models.Orders", b =>
+                {
+                    b.Navigation("Carts");
                 });
 #pragma warning restore 612, 618
         }

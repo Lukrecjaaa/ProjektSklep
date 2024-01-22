@@ -2,17 +2,20 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjektSklep.Data;
 
 #nullable disable
 
-namespace ProjektSklep.Data.Migrations
+namespace ProjektSklep.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240122181512_init_8")]
+    partial class init_8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.1");
@@ -221,13 +224,6 @@ namespace ProjektSklep.Data.Migrations
 
                     b.Property<bool>("IsOrdered")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("ProductIds")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("Sum")
-                        .HasColumnType("REAL");
 
                     b.Property<string>("UserId")
                         .HasColumnType("TEXT");

@@ -21,7 +21,7 @@ public class CartController : Controller
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId);
+        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId && c.IsOrdered == false);
         if (cart == null)
         {
             cart = new Cart
@@ -31,7 +31,7 @@ public class CartController : Controller
             _context.Carts.Add(cart);
         }
 
-        cart.Products = cart.Products.Distinct().ToList();
+        // cart.Products = cart.Products.Distinct().ToList();
         
         return View(cart);
     }
@@ -41,7 +41,7 @@ public class CartController : Controller
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId);
+        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId && c.IsOrdered == false);
         if (cart == null)
         {
             cart = new Cart
@@ -65,7 +65,11 @@ public class CartController : Controller
             cart.Products.Add(product);
         }
         
-        cart.Products = cart.Products.Distinct().ToList();
+        // cart.Products = cart.Products.Distinct().ToList();
+
+        cart.Sum += product.Price;
+        
+        cart.ProductIds.Add(product.Id);
 
         _context.SaveChanges();
         
@@ -77,7 +81,7 @@ public class CartController : Controller
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId);
+        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId && c.IsOrdered == false);
         if (cart == null)
         {
             cart = new Cart
@@ -101,7 +105,11 @@ public class CartController : Controller
             cart.Products.RemoveAt(index);
         }
         
-        cart.Products = cart.Products.Distinct().ToList();
+        // cart.Products = cart.Products.Distinct().ToList();
+        
+        cart.Sum -= product.Price;
+        
+        cart.ProductIds.Remove(product.Id);
 
         _context.SaveChanges();
         
@@ -113,7 +121,7 @@ public class CartController : Controller
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId);
+        var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.UserId == userId && c.IsOrdered == false);
         if (cart == null)
         {
             cart = new Cart
@@ -123,18 +131,9 @@ public class CartController : Controller
             _context.Carts.Add(cart);
         }
 
-        // var orders = _context.Orders.FirstOrDefault(o => o.UserId == userId);
-        // if (orders == null)
-        // {
-        //     orders = new Orders
-        //     {
-        //         UserId = userId
-        //     };
-        //     _context.Orders.Add(orders);
-        // }
-        // orders.Carts.Add(cart);
+        cart.IsOrdered = true;
+        // cart.Products = cart.Products.Distinct().ToList();
 
-        _context.Carts.Remove(cart);
         _context.SaveChanges();
 
         return View("Success", cart);

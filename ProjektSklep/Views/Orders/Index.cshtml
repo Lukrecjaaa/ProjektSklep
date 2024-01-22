@@ -1,19 +1,24 @@
-@model Orders
+@model List<Cart>
 
 @{
     ViewBag.Title = "Zamówienia";
     Layout = "_Layout";
 }
 
-<h2>Zamówienia użytkownika @Model.UserId</h2>
-@foreach (var cart in @Model.Carts)
+@if (Model.Count > 0)
 {
-    <p>Zamówienie nr. @cart.Id</p>
-    if (@cart.Products != null)
+    <h2>Zamówienia użytkownika @Model[0].UserId</h2>
+    @foreach (var cart in @Model)
     {
-        foreach (var product in @cart.Products)
+        <h4>Zamówienie nr. @cart.Id</h4>
+        @foreach (var product in @cart.Products)
         {
             <p>@product.Id; @product.Name; @product.Price zł; @product.Count</p>
         }
+        <p>Suma: @cart.Sum zł</p>
     }
+}
+else
+{
+    <h2>Brak zamówień</h2>
 }

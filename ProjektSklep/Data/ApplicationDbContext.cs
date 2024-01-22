@@ -13,5 +13,4 @@ public class ApplicationDbContext : IdentityDbContext
     
     public DbSet<Cart> Carts { get; set; }
     public DbSet<Product> Products { get; set; }
-    public DbSet<Orders> Orders { get; set; }
 }
