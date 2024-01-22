@@ -5,13 +5,29 @@
     Layout = "_Layout";
 }
 
-<h2>Zamówienie zostało przyjęte</h2>
-<p>Zamówione zostały produkty:</p>
+<h2>Zamówienie zostało przyjęte, dziękujemy!</h2>
+<h4>Zamówione zostały produkty:</h4>
 @if (@Model.Products != null)
 {
-    foreach (var product in @Model.Products)
-    {
-        <p>@product.Id; @product.Name; @product.Price zł; @product.Count</p>
-    }
-    <p>Suma: @Model.Sum zł</p>
+    <table class="table">
+        <tr>
+            <th>ID produktu</th>
+            <th>Nazwa</th>
+            <th>Cena</th>
+            <th>Ilość</th>
+        </tr>
+        @foreach (var product in @Model.Products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price zł</td>
+                <td>@product.Count szt</td>
+            </tr>
+        }
+        <tr class="table-info">
+            <td colspan="4">Suma: @Model.Sum zł</td>
+        </tr>
+
+    </table>
 }

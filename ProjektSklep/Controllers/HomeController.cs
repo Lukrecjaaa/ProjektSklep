@@ -28,8 +28,8 @@ public class HomeController : Controller
         var p1 = new Product
         {
             Id = 1,
-            Name = "AAA",
-            Price = 1.23,
+            Name = "Garnek",
+            Price = 55.99,
             Count = 1
         };
         var p2 = new Product

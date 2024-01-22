@@ -8,17 +8,31 @@
 @if (Model.Count > 0)
 {
     <h2>Zamówienia użytkownika @Model[0].UserId</h2>
-    @foreach (var cart in @Model)
-    {
-        <h4>Zamówienie nr. @cart.Id</h4>
-        @foreach (var product in @cart.Products)
+    <table class="table">
+        @foreach (var cart in @Model)
         {
-            <p>@product.Id; @product.Name; @product.Price zł; @product.Count</p>
+            <tr>
+                <th colspan="4">Zamówienie nr. @cart.Id</th>
+            </tr>
+            @foreach (var product in @cart.Products)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price zł</td>
+                    <td>@product.Count szt</td>
+                </tr>
+            }
+            <tr class="table-info">
+                <td colspan="4">Suma: @cart.Sum zł</td>
+            </tr>
+            <tr style="height: 20px"></tr>
         }
-        <p>Suma: @cart.Sum zł</p>
-    }
+    </table>
 }
 else
 {
     <h2>Brak zamówień</h2>
 }
+<style>
+</style>
